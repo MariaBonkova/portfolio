@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Popins", sans-serif;
+}
+.container {
+  width: 90%;
+  margin-inline: auto;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 0;
+  align-items: center;
+}
+.navbar .left {
+  font-size: 32px;
+  font-weight: 900;
+}
+.navbar .right {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .right a:link,
+.navbar .right a:visited {
+  text-decoration: none;
+  color: black;
+}
+.navbar .right a:hover {
+  text-decoration: underline;
+}
+
+.navbar .right img {
+  width: 24px;
+  height: 24px;
+}
+.navbar .menu {
+  height: 50px;
+  width: 50px;
+  display: none;
+}
+.navbar .bar {
+  background-color: black;
+  height: 4px;
+  width: 36px;
+
+  border-radius: 10px;
+}
+.project-grid {
+  display: grid;
+  grid-template-areas:
+    " hike hike photographer"
+    "hike hike space"
+    "ai-chatbot cuber  space"
+    "animals schedule-app schedule-app"
+    "animals schedule-app schedule-app"
+    "fish-game fish-game gim-app"
+    "fish-game fish-game gim-app";
+  gap: 16px;
+}
+
+#hike {
+  grid-area: hike;
+}
+
+#photographer {
+  grid-area: photographer;
+}
+
+#space {
+  grid-area: space;
+}
+#cuber {
+  grid-area: cuber;
+}
+
+#ai-chatbot {
+  grid-area: ai-chatbot;
+}
+
+#animals {
+  grid-area: animals;
+}
+#schedule-app {
+  grid-area: schedule-app;
+}
+#fish-game {
+  grid-area: fish-game;
+}
+
+#gim-app {
+  grid-area: gim-app;
+}
+
+.project {
+  position: relative;
+}
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project .overlay {
+  opacity: 0;
+  transition: all 0.2s ease;
+  background-color: rgb(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.project:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+.footer {
+  text-align: center;
+  padding: 25px;
+}
+
+@media screen and (max-width: 1100px) {
+  .project-grid {
+    grid-template-areas:
+      "hike hike"
+      "photographer space"
+      "ai-chatbot cuber"
+      "schedule-app schedule-app"
+      "animals fish-game"
+      "gim-app gim-app";
+  }
+  .container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .navbar .right {
+    display: none;
+  }
+  .navbar .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+  }
+  .project-grid {
+    grid-template-areas:
+      "hike hike"
+      "photographer photographer"
+      "space space"
+      "ai-chatbot cuber"
+      "schedule-app schedule-app"
+      "animals animals "
+      "fish-game fish-game"
+      "gim-app gim-app";
+  }
+  .project .overlay {
+    font-size: 24pxork;
+  }
+}
